@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "AWS Lambda Layer for `chrome-aws-lambda` and `puppeteer`",
   "scripts": {
+    "build": "npm run prune && mkdir -p opt/nodejs && npm install --prefix opt/nodejs --production chrome-aws-lambda puppeteer-core",
+    "deploy": "npm run build && (cd opt && zip -yr ../opt.zip .) && cdk deploy",
     "lint": "eslint . --ext .js,.ts --ignore-path .gitignore",
     "prepare": "husky install",
+    "prune": "rm -rf cdk.out opt opt.zip out",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +21,11 @@
   },
   "homepage": "https://github.com/robdasilva/aws-lambda-layer-chromium#readme",
   "devDependencies": {
+    "@aws-cdk/aws-lambda": "^1.117.0",
+    "@aws-cdk/core": "^1.117.0",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
+    "aws-cdk": "^1.117.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.3.0",
