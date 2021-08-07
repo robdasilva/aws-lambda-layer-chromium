@@ -1,0 +1,31 @@
+{
+  "name": "aws-lambda-layer-chromium",
+  "version": "1.0.0",
+  "description": "AWS Lambda Layer for `chrome-aws-lambda` and `puppeteer`",
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts --ignore-path .gitignore",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robdasilva/aws-lambda-layer-chromium.git"
+  },
+  "author": "Robert Schweizer <mail@robertschweizer.me> (http://robertschweizer.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robdasilva/aws-lambda-layer-chromium/issues"
+  },
+  "homepage": "https://github.com/robdasilva/aws-lambda-layer-chromium#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
